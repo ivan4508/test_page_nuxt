@@ -1,0 +1,14 @@
+@import './smart-grid.scss';
+@import './smart-grid-per.scss';
+@mixin font($family,$weight,$size,$line,$color){
+    font-family:Montserrat;
+    font-style:normal;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line;
+    color: $color;
+};
+@mixin page{
+    max-width: min(93%,1600px);
+    margin:auto;
+}
