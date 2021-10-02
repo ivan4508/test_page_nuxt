@@ -10,5 +10,8 @@
 };
 @mixin page{
     max-width: min(93%,1600px);
-    margin:auto;
+    width: 100%;
+    @include md-block{
+        max-width:100%;
+    };
 }

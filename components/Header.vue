@@ -3,13 +3,13 @@ header.header
 	.logo__wrap
 		a(href='#' aria-current="page")
 			img.logo(src='../static/img/logo.png')
-	<NavBar />
+	<NavBarHeader />
 </template>
 <script>
-	import NavBar from '@/components/nav/NavBar.vue';
+	import NavBarHeader from '@/components/nav/NavBarHeader.vue';
 	export default {
 		components:{
-			NavBar
+			NavBarHeader
 		}
 	}
 </script>
@@ -28,11 +28,16 @@ header.header
 		justify-content:center;
 		.logo__wrap{
 			margin-bottom: 25px;
+			flex-basis: 100%;
+			img{
+				margin:auto;
+			}
 		}
 	};
 	@include md-block{
+		display: block;
 		.logo__wrap{
-			margin-bottom:-25px;
+			margin-bottom: 0;
 		}
 	};
 }
