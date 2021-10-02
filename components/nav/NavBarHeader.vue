@@ -106,6 +106,7 @@ nav.navbar(:class='{active}')
 	padding:4px 24px;
 	margin-left:16px;
 	margin-right: 16px;
+	cursor: pointer;
 	&.log_in{
 		@include font(Inter,bold,15px,24px,#2D2D34);
 		border: 2px solid #2D2D34;
