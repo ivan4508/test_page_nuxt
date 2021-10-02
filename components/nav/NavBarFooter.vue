@@ -1,5 +1,6 @@
 <template lang='pug'>
-nav.nav.d-flex
+.nav__footer.d-flex
+	p.copyright Whalemap 2021
 	ul.navbar
 		li.navbar__item(v-for='link in listLink')
 			a.navbar__link(href='link.url') {{link.text}}
@@ -27,7 +28,7 @@ nav.nav.d-flex
 <style lang='scss'>
 @import '../../static/css/main.scss';
 .footer{
-	.nav{
+	.nav__footer{
 		.navbar__item{
 			margin-right: 24px;
 			float: left;

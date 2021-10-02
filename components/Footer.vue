@@ -1,12 +1,15 @@
 <template lang='pug'>
 .footer__wrap
 	footer.footer
-		.items.first
+		section.first
 			.item
+				h2.label Stop watching. Just try it
+				p.text We have a free plan that lets you feel everything for yourself. Just sign up
+				button.btn(type='button') sign up free
 			.item
-		.items.last
-			.item.d-flex
-				p.copyright Whalemap 2021
+				img(src='../static/img/img_footer.png')
+		section.last
+			.item
 				<NavBarFooter />
 </template>
 <script>
@@ -32,7 +35,33 @@
 .footer{
 	@include page();
 	margin: auto;
-	.first{}
+	.first{
+		@include section();
+		display: flex;
+		justify-content:center;
+		padding-top: 107px;
+		padding-bottom: 100px;
+		.label{
+			@include font(Gosha Sans,bold,48px,54px,#2D2D34);
+			margin-bottom: 40px;
+		}
+		.text{
+			@include font(Inter,normal,21px,40px,#2D2D34);
+			margin-bottom: 80px;
+		}
+		.btn{
+			@include font(Inter,bold,19px,32px,#2D2D34);
+			text-transform: uppercase;
+			letter-spacing: 0.07em;
+			font-feature-settings: 'tnum' on, 'lnum' on;
+			background: #7CD1B0;
+			border-radius: 10px;
+			border:none;
+			outline: none;
+			margin:0;
+			padding: 16px 32px;
+		}
+	}
 	.last{
 		border-top:1px solid #2D2D34;
 		padding-top:32px;
