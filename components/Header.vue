@@ -9,7 +9,7 @@ header.header
 			h1.label Track bitcoin whales and hodlers
 			button.btn(type='button') 7 day Whalemode trial
 		.item.last
-			img(src='../static/img/img_header.png')
+			img(src='../static/img/img_header.svg')
 </template>
 <script>
 	import NavBarHeader from '@/components/nav/NavBarHeader.vue';
@@ -62,6 +62,12 @@ header.header
 			border-radius: 16px;
 			margin:0;
 			padding:16px 38px;
+		}
+	}
+	.last{
+		display: flex;
+		img{
+			margin:auto;
 		}
 	}
 	@include md-block{
