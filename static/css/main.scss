@@ -9,8 +9,8 @@
     color: $color;
 };
 @mixin page{
-    max-width:93%;
-    max-width: min(93%,1600px);
+    max-width:79%;
+    max-width: min(79%,1600px);
     width: 100%;
     @include md-block{
         max-width:100%;

@@ -2,20 +2,40 @@
 header.header
 	.logo__wrap
 		a(href='#' aria-current="page")
-			img.logo(src='../static/img/logo.png')
+			img.logo(src='../static/img/logo.png' alt='logo')
 	<NavBarHeader />
-	section.box
+	section.container
 		.item.first
 			h1.label Track bitcoin whales and hodlers
 			button.btn(type='button') 7 day Whalemode trial
-		.item.last
+		.item.img_wrapp
 			img(src='../static/img/img_header.svg')
+		.item.box__tool
+			a(
+			v-for='item in toolList'
+			:href='item.href'
+			)
+				img(:src='imgUrl(item.imgName)')
+				p.text {{item.title}}
 </template>
 <script>
 	import NavBarHeader from '@/components/nav/NavBarHeader.vue';
 	export default {
 		components:{
 			NavBarHeader
+		},
+		data:()=>({
+			toolList:[
+			{href:'#',imgName:'charts.svg',title:'Charts'},
+			{href:'#',imgName:'digests.svg',title:'Digests'},
+			{href:'#',imgName:'tutorials.svg',title:'Tutorials'},
+			{href:'#',imgName:'twitter.svg',title:'Twitter'},
+			]
+		}),
+		methods:{
+			imgUrl(val){
+				return require('@/static/img/icon_tool/'+val);
+			}
 		}
 	}
 </script>
@@ -33,6 +53,7 @@ header.header
 	@include lg-block{
 		justify-content:center;
 		.logo__wrap{
+			margin-left: 15px;
 			margin-bottom: 25px;
 			flex-basis: 100%;
 			img{
@@ -40,12 +61,15 @@ header.header
 			}
 		}
 	};
-	.box{
+	.container{
 		flex-basis: 100%;
 		@include section();
 		display: flex;
+		flex-wrap:wrap;
+		justify-content:space-between;
+		padding-top: 88px;
 		.item{
-			flex-basis: fit-content;
+			flex-basis: 50%;
 		}
 	}
 	.first{
@@ -64,10 +88,22 @@ header.header
 			padding:16px 38px;
 		}
 	}
-	.last{
+	.img_wrapp{
 		display: flex;
 		img{
 			margin:auto;
+			 transform: scale(1.2) translateX(180px);
+		}
+	}
+	.last{
+		display: flex;
+	}
+	.box__tool{
+		display: flex;
+		flex-basis:100%;
+		.text{
+			text-decoration: none;
+			text-align: center;
 		}
 	}
 	@include md-block{
@@ -77,4 +113,5 @@ header.header
 		}
 	};
 }
+
 </style>
