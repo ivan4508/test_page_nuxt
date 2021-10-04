@@ -10,13 +10,13 @@ header.header
 			button.btn(type='button') 7 day Whalemode trial
 		.item.img_wrapp
 			img(src='../static/img/img_header.svg')
-		.item.box__tool
-			a(
-			v-for='item in toolList'
-			:href='item.href'
-			)
-				img(:src='imgUrl(item.imgName)')
-				p.text {{item.title}}
+	.box__tool
+		a.link(
+		v-for='item in toolList'
+		:href='item.href'
+		)
+			img(:src='imgUrl(item.imgName)')
+			p.text {{item.title}}
 </template>
 <script>
 	import NavBarHeader from '@/components/nav/NavBarHeader.vue';
@@ -101,9 +101,15 @@ header.header
 	.box__tool{
 		display: flex;
 		flex-basis:100%;
-		.text{
+		@include section();
+		margin-top: -15px;
+		.link{
 			text-decoration: none;
+			margin-right: 7%;
 			text-align: center;
+		}
+		.text{
+			@include font(Inter,bold,21px,40px,#2D2D34);
 		}
 	}
 	@include md-block{

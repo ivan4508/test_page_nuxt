@@ -7,7 +7,7 @@
 				p.text We have a free plan that lets you feel everything for yourself. Just sign up
 				button.btn(type='button') sign up free
 			.item
-				img(src='../static/img/img_footer.png')
+				img.img(src='../static/img/img_footer.png')
 		section.last
 			.item
 				<NavBarFooter />
@@ -38,8 +38,7 @@
 	.first{
 		@include section();
 		display: flex;
-		justify-content:center;
-		padding-top: 107px;
+		padding-top: 126px;
 		padding-bottom: 100px;
 		.label{
 			@include font(Gosha Sans,bold,48px,54px,#2D2D34);
@@ -61,12 +60,16 @@
 			margin:0;
 			padding: 16px 32px;
 		}
+		.img{
+			transform:scale(1.2) translateX(31px);
+		}
 	}
 	.last{
 		border-top:1px solid #2D2D34;
 		padding-top:32px;
-		padding-bottom:40px;
+	}
+	.copyright{
+		@include font(Inter,normal,19px,24px,#2D2D34);
 	}
 }
-
 </style>
