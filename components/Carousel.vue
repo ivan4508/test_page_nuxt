@@ -16,12 +16,13 @@ div.wrapp__carousel
         h4.title {{item.title}}
         p.desc {{item.desc}}
         .mode_available
-          h5 Mode available:
-          ul
-            li(
+          h5.label Mode available:
+          ul.list_mode
+            li.item(
             v-for='(name,i) in item.modesList'
-            :key='i')
-              span(:class='modeClass(name)') {{name}}
+            :key='i'
+            :class='modeClass(name)'
+            ) {{name}}
   VueSlickCarousel.carousel_img(
     ref='carouselImg'
     v-bind='settings')
@@ -108,8 +109,10 @@ div.wrapp__carousel
   };
   .carousel_text{
     max-width:25%;
+    margin-top: 100px;
     @include lg-block{
       max-width:100%;
+      margin-top: 15px;
     };
   }
   .carousel_img{
@@ -141,6 +144,9 @@ div.wrapp__carousel
     position: absolute;
     top: 30%;
     left: 0;
+    @include xl-block{
+      top: 10%;
+    };
     @include lg-block{
       position: static;
     }
@@ -164,6 +170,9 @@ div.wrapp__carousel
   .btn_next{
     top:15%;
     transform:rotate(180deg);
+    @include xl-block{
+      top: 5%;
+    };
     @include lg-block{
       position: relative;
       z-index: 2;
@@ -180,6 +189,7 @@ div.wrapp__carousel
   .btn_prev{
     bottom:15%;
      transform:rotate(0deg);
+
      @include lg-block{
       position: relative;
       z-index: 2;
@@ -193,7 +203,27 @@ div.wrapp__carousel
       transform:rotate(0deg);
      };
   }
-
+  .mode_available{
+    margin-top: 40px;
+    .label{
+      @include font(Inter,bold,19px,32px,rgba(255, 255, 255, 0.5));
+      font-feature-settings: 'tnum' on, 'lnum' on;
+      margin-bottom: 15px;
+    }
+  }
+  .list_mode{
+    @include font(Inter,bold,14px,8px,#FFFFFF);
+     letter-spacing: 0.04em;
+      font-feature-settings: 'tnum' on, 'lnum' on;
+    .item{
+      float:left;
+      margin-right: 8px;
+      border-radius: 4px;
+      padding:8px;
+      text-transform:uppercase;
+      margin-bottom: 15px;
+    }
+  }
   .daily__mode{
     background-color: #E7E7E7;
     color:#000000;
@@ -208,6 +238,10 @@ div.wrapp__carousel
   }
   .whales__mode{
     background-color: #68A0F6;
+    color:#FFFFFF;
+  }
+  .hodlers__mode{
+    background-color: #18a9a0;
     color:#FFFFFF;
   }
 }

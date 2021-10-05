@@ -74,7 +74,7 @@
 		}
 		@include sm-block{
 			.img_wrapp{
-				padding-right: 30px;
+				padding-right: 55px;
 			}
 		};
 	}

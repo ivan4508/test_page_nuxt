@@ -49,7 +49,6 @@ export default {
   background-image: url('../static/img/vantage_bg.svg'),linear-gradient(180deg, #26262C 0%, #26262C 100%);
   background-repeat: no-repeat;
   background-position:right 10%;
-  margin-top: 59px;
 }
 .vantage{
   @include section();
@@ -70,6 +69,10 @@ export default {
     .label{
       @include font(Gosha Sans,bold,72px,88px,#FFFFFF);
       margin-bottom: 40px;
+      @include md-block{
+        font-size: 50px;
+        line-height: 58px;
+      }
     }
     .text{
       @include font(Inter,normal,21px,40px,#ADADB1);
@@ -120,6 +123,9 @@ export default {
       text-transform:lowercase;
       display: block;
       margin-top: 16px;
+      @include md-block{
+        line-height:48px;
+      }
     }
   }
   @include xl-block{

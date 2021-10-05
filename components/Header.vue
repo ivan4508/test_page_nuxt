@@ -1,22 +1,23 @@
 <template lang='pug'>
-header.header
-	.logo__wrap
-		a(href='#' aria-current="page")
-			img.logo(src='../static/img/logo.png' alt='logo')
-	<NavBarHeader />
-	section.container
-		.item.first
-			h1.label Track bitcoin whales and hodlers
-			button.btn(type='button') 7 day Whalemode trial
-		.item.img_wrapp
-			img.img(src='../static/img/img_header.svg')
-	.box__tool
-		a.link(
-		v-for='item in toolList'
-		:href='item.href'
-		)
-			img(:src='imgUrl(item.imgName)')
-			p.text {{item.title}}
+.wrapp_header
+	header.header
+		.logo__wrap
+			a(href='#' aria-current="page")
+				img.logo(src='../static/img/logo.png' alt='logo')
+		<NavBarHeader />
+		section.container
+			.item.first
+				h1.label Track bitcoin whales and hodlers
+				button.btn(type='button') 7 day Whalemode trial
+			.item.img_wrapp
+				img.img(src='../static/img/img_header.svg')
+		.box__tool
+			a.link(
+			v-for='item in toolList'
+			:href='item.href'
+			)
+				img(:src='imgUrl(item.imgName)')
+				p.text {{item.title}}
 </template>
 <script>
 	import NavBarHeader from '@/components/nav/NavBarHeader.vue';
@@ -41,6 +42,11 @@ header.header
 </script>
 <style lang='scss'>
 @import '../static/css/main.scss';
+.wrapp_header{
+	background:url('../static/img/header_bg.svg') no-repeat 0 265%;
+	background-size: contain;
+	padding-bottom: 59px;
+}
 .header{
 	display: flex;
 	justify-content: space-between;
@@ -101,6 +107,10 @@ header.header
 			border-radius: 16px;
 			margin:0;
 			padding:16px 38px;
+			@include xl-block{
+				padding:10px 15px;
+				font-size: 16px;
+			};
 		}
 	}
 	.img_wrapp{
@@ -121,6 +131,9 @@ header.header
 		flex-basis:100%;
 		@include section();
 		margin-top: -15px;
+		@include xl-block{
+			margin-top: 30px;
+		};
 		@include lg-block{
 			margin-top: 30px;
 			justify-content:center;
