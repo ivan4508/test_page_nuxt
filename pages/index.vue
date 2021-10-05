@@ -42,6 +42,7 @@ export default {
   height:100vh;
   .main{
     flex-grow: 1;
+    max-width:100%;
   }
 }
 .wrapp__vantage{
@@ -53,17 +54,25 @@ export default {
 .vantage{
   @include section();
   padding-top: 170px;
-  padding-bottom: 127px;
+  padding-bottom: 40px;
+  @include lg-block{
+    padding-top: 70px;
+  }
   .first{
     max-width: 48%;
     margin-left: 16%;
+    @include lg-block{
+      max-width:100%;
+      margin-left: 0;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
     .label{
       @include font(Gosha Sans,bold,72px,88px,#FFFFFF);
       margin-bottom: 40px;
     }
     .text{
       @include font(Inter,normal,21px,40px,#ADADB1);
-      margin-bottom: 119px;
     }
   }
 }
@@ -79,6 +88,10 @@ export default {
   padding-bottom: 100px;
   display: flex;
   justify-content:space-between;
+  @include lg-block{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .first{
     flex-basis:50%;
     .label{
@@ -107,6 +120,15 @@ export default {
       text-transform:lowercase;
       display: block;
       margin-top: 16px;
+    }
+  }
+  @include xl-block{
+    flex-direction:column;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    .first .text,
+    .last .text{
+      margin-bottom: 45px;
     }
   }
 }

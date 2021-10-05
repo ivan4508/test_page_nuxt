@@ -60,6 +60,9 @@ nav.navbar(:class='{active}')
 				z-index: 1;
 				background-color: #fff;
 			}
+			.navbar__list{
+				padding-left: 5px;
+			}
 		}
 	};
 }
@@ -132,7 +135,7 @@ nav.navbar(:class='{active}')
 		left:0;
 		right:0;
 		.btn{
-			transform:translateY(-20px);
+			transform:translateY(-34px);
 			padding:0;
 			min-height: 30px;
 			min-width: 20px;
@@ -140,6 +143,7 @@ nav.navbar(:class='{active}')
 			border:none;
 			position: relative;
 			z-index: 2;
+			background-color: transparent;
 		}
 	}
 

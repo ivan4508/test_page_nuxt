@@ -11,8 +11,7 @@
 @mixin page{
     max-width:79%;
     max-width: min(79%,1600px);
-    width: 100%;
-    @include md-block{
+    @include lg-block{
         max-width:100%;
     };
 }
@@ -20,4 +19,7 @@
     max-width:64.63%;
     max-width:min(64.63%,971px);
     margin:auto;
+    @include lg-block{
+        max-width:100%;
+    };
 }

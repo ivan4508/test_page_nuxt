@@ -6,7 +6,7 @@
 				h2.label Stop watching. Just try it
 				p.text We have a free plan that lets you feel everything for yourself. Just sign up
 				button.btn(type='button') sign up free
-			.item
+			.item.img_wrapp
 				img.img(src='../static/img/img_footer.png')
 		section.last
 			.item
@@ -17,9 +17,7 @@
 	export default {
 		components:{
 			NavBarFooter
-		},
-		data:()=>({
-		}),
+		}
 	};
 </script>
 <style lang="scss">
@@ -47,6 +45,9 @@
 		.text{
 			@include font(Inter,normal,21px,40px,#2D2D34);
 			margin-bottom: 80px;
+			@include xl-block{
+				margin-bottom: 30px;
+			}
 		}
 		.btn{
 			@include font(Inter,bold,19px,32px,#2D2D34);
@@ -63,6 +64,19 @@
 		.img{
 			transform:scale(1.2) translateX(31px);
 		}
+		@include xl-block{
+			flex-direction:column-reverse;
+			text-align: center;
+			.img{
+				transform:translateX(50px);
+				margin-bottom: 30px;
+			}
+		}
+		@include sm-block{
+			.img_wrapp{
+				padding-right: 30px;
+			}
+		};
 	}
 	.last{
 		border-top:1px solid #2D2D34;
@@ -70,6 +84,10 @@
 	}
 	.copyright{
 		@include font(Inter,normal,19px,24px,#2D2D34);
+		margin-top: 8px;
+		@include md-block{
+			display: none;
+		}
 	}
 }
 </style>

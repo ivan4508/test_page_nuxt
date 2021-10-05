@@ -9,7 +9,7 @@ header.header
 			h1.label Track bitcoin whales and hodlers
 			button.btn(type='button') 7 day Whalemode trial
 		.item.img_wrapp
-			img(src='../static/img/img_header.svg')
+			img.img(src='../static/img/img_header.svg')
 	.box__tool
 		a.link(
 		v-for='item in toolList'
@@ -52,10 +52,12 @@ header.header
 	margin:auto;
 	@include lg-block{
 		justify-content:center;
+		width: 100%;
 		.logo__wrap{
 			margin-left: 15px;
 			margin-bottom: 25px;
 			flex-basis: 100%;
+			text-align:center;
 			img{
 				margin:auto;
 			}
@@ -67,16 +69,29 @@ header.header
 		display: flex;
 		flex-wrap:wrap;
 		justify-content:space-between;
-		padding-top: 88px;
+		padding-top: 81px;
+		@include lg-block{
+			padding-top: 70px;
+			flex-direction: column-reverse;
+		}
 		.item{
 			flex-basis: 50%;
 		}
 	}
 	.first{
+		@include lg-block{
+			text-align: center;
+		}
 		.label{
 			@include font(Gosha Sans,bold,72px,88px,#2D2D34);
 			margin-bottom: 40px;
-			}
+			@include lg-block{
+				font-size:33px;
+				line-height:46px;
+				margin-top: 15px;
+				margin-bottom: 30px;
+			};
+		}
 		.btn{
 			@include font(Inter,bold,19px,32px,#FFFFFF);
 			letter-spacing: 0.07em;
@@ -90,9 +105,12 @@ header.header
 	}
 	.img_wrapp{
 		display: flex;
-		img{
+		.img{
 			margin:auto;
 			 transform: scale(1.2) translateX(180px);
+			 @include lg-block{
+			 	transform:none;
+			 };
 		}
 	}
 	.last{
@@ -103,10 +121,20 @@ header.header
 		flex-basis:100%;
 		@include section();
 		margin-top: -15px;
+		@include lg-block{
+			margin-top: 30px;
+			justify-content:center;
+		}
 		.link{
 			text-decoration: none;
 			margin-right: 7%;
 			text-align: center;
+			@include lg-block{
+				max-width: 16%;
+				&:last-child{
+					margin-right: 0;
+				}
+			}
 		}
 		.text{
 			@include font(Inter,bold,21px,40px,#2D2D34);

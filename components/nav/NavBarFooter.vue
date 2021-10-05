@@ -37,6 +37,33 @@
 				@include font(Inter,normal,19px,24px,#2D2D34);
 			}
 		}
+		@include lg-block{
+			flex-wrap:wrap;
+			justify-content:center;
+		}
+		@include md-block{
+			justify-content:space-between;
+			padding-left: 15px;
+			padding-right: 15px;
+		}
+	}
+	.navbar{
+		@include lg-block{
+			flex-basis:100%;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			justify-content:center;
+		}
+		@include md-block{
+			flex-direction:column;
+			flex-basis: 50%;
+			.navbar__item:not(:last-child){
+				margin-bottom: 15px;
+			}
+		}
+	}
+	.socials{
+		align-self:flex-end;
 	}
 }
 </style>
